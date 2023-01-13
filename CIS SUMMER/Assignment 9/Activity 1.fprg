@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-06-17 12:27:57 AM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTM7MTE6NTE6NDMgQU07MjgzMA=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTc7MTI6Mjc6NTcgQU07MTI7MzAwMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program uses do while loop to ask the user for grade scores and displays the average."/>
+            <declare name="total, i, a, average" type="Integer" array="False" size=""/>
+            <comment text="Value is assigned -1 to fulfill the requirement of question."/>
+            <assign variable="i" expression="-1"/>
+            <assign variable="a" expression="0"/>
+            <assign variable="total" expression="0"/>
+            <assign variable="average" expression="CalculateAverage(total, i, a)"/>
+            <output expression="&quot;Average of your scores is:&quot; &amp; average" newline="True"/>
+        </body>
+    </function>
+    <function name="Average" type="Integer" variable="total">
+        <parameters>
+            <parameter name="total" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="total" expression="total / i"/>
+        </body>
+    </function>
+    <function name="CalculateAverage" type="Integer" variable="average">
+        <parameters>
+            <parameter name="total" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="a" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="average" type="Integer" array="False" size=""/>
+            <do expression="a &gt; 0">
+                <assign variable="total" expression="total + a"/>
+                <assign variable="i" expression="i + 1"/>
+                <assign variable="a" expression="GetScores()"/>
+            </do>
+            <assign variable="average" expression="Average(total, i)"/>
+        </body>
+    </function>
+    <function name="GetScores" type="Integer" variable="scores">
+        <parameters/>
+        <body>
+            <declare name="scores" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your grade scores: &quot;" newline="True"/>
+            <input variable="scores"/>
+        </body>
+    </function>
+</flowgorithm>

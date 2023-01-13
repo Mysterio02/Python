@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-06-17 12:31:29 AM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTY7MDk6MjA6MTEgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTY7MDk6MzM6MzkgUE07NTtNZXJhajtERVNLVE9QLTZFRVVTVjA7MjAyMC0wNi0wOTswNjo1NzoxNSBQTTtBY3Rpdml0eSAxLmZwcmc7NzM1Mg=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTc7MTI6MzE6MjkgQU07MjsyOTQ2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program uses for loop to generate a list of multiplication expressions for a given value."/>
+            <declare name="number, value, i" type="Integer" array="False" size=""/>
+            <assign variable="number" expression="GetNumber()"/>
+            <assign variable="value" expression="GetValue()"/>
+            <assign variable="i" expression="1"/>
+            <call expression="ForLoop(number, value, i)"/>
+        </body>
+    </function>
+    <function name="ForLoop" type="None" variable="">
+        <parameters>
+            <parameter name="number" type="Integer" array="False"/>
+            <parameter name="value" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;For Loop multiplying &quot; &amp; number &amp; &quot; times by &quot; &amp; value &amp; &quot;:&quot;" newline="True"/>
+            <for variable="i" start="1" end="value" direction="inc" step="1">
+                <output expression="Number &amp; &quot; * &quot; &amp; i &amp; &quot; = &quot; &amp; Number * i" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="GetNumber" type="Integer" variable="number">
+        <parameters/>
+        <body>
+            <declare name="number" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number to generate multiplication expressions for:&quot;" newline="True"/>
+            <input variable="number"/>
+        </body>
+    </function>
+    <function name="GetValue" type="Integer" variable="value">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of value to be displayed:&quot;" newline="True"/>
+            <input variable="value"/>
+        </body>
+    </function>
+</flowgorithm>

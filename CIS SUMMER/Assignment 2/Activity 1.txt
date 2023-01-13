@@ -1,0 +1,4 @@
+Function Main
+    ... This program displays Hello, Madiha!
+    Output "Hello, Madiha!"
+End

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-26 03:36:09 PM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMjU7MTE6NTU6MTggUE07Mjg1Mw=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMjY7MDM6MzY6MDkgUE07MzsyOTY0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program displays age in months, days, hours, and seconds."/>
+            <declare name="months, days, hours, seconds, age" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your age:&quot;" newline="True"/>
+            <input variable="age"/>
+            <assign variable="months" expression="12*age"/>
+            <assign variable="days" expression="365*age"/>
+            <assign variable="hours" expression="24*days"/>
+            <assign variable="seconds" expression="86400*365"/>
+            <output expression="&quot;Number of months: &quot;&amp; months" newline="True"/>
+            <output expression="&quot;Number of days: &quot; &amp; days" newline="True"/>
+            <output expression="&quot;Number of hours: &quot; &amp; hours" newline="True"/>
+            <output expression="&quot;Number of seconds: &quot;&amp; seconds" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

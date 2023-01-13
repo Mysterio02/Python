@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-30 12:58:17 PM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMzA7MTI6MjI6MzYgUE07Mjg0NA=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMzA7MTI6NDA6MDAgUE07MztNZXJhajtERVNLVE9QLTZFRVVTVjA7MjAyMC0wNS0yNTsxMTo1NToxOCBQTTtBY3Rpdml0eSAyLmZwcmc7NzMyMA=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMzA7MTI6NTg6MTcgUE07MzsyOTYy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Seperate functions for output, processing, and input"/>
+            <declare name="months, days, hours, seconds, age" type="Integer" array="False" size=""/>
+            <assign variable="age" expression="GetAge()"/>
+            <assign variable="months" expression="CalculateMonths(age)"/>
+            <assign variable="days" expression="CalculateDays(age)"/>
+            <assign variable="hours" expression="CalculateHours(days)"/>
+            <assign variable="seconds" expression="CalculateSeconds(days)"/>
+            <call expression="DisplayResult(months, days, hours, seconds)"/>
+        </body>
+    </function>
+    <function name="CalculateDays" type="Integer" variable="days">
+        <parameters>
+            <parameter name="age" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="days" type="Integer" array="False" size=""/>
+            <assign variable="days" expression="365*age"/>
+        </body>
+    </function>
+    <function name="CalculateHours" type="Integer" variable="hours">
+        <parameters>
+            <parameter name="days" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="hours" type="Integer" array="False" size=""/>
+            <assign variable="hours" expression="24*days"/>
+        </body>
+    </function>
+    <function name="CalculateMonths" type="Integer" variable="months">
+        <parameters>
+            <parameter name="age" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="months" type="Integer" array="False" size=""/>
+            <assign variable="months" expression="12*age"/>
+        </body>
+    </function>
+    <function name="CalculateSeconds" type="Integer" variable="seconds">
+        <parameters>
+            <parameter name="hours" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="seconds" type="Integer" array="False" size=""/>
+            <assign variable="seconds" expression="86400*365"/>
+        </body>
+    </function>
+    <function name="DisplayResult" type="None" variable="">
+        <parameters>
+            <parameter name="months" type="Integer" array="False"/>
+            <parameter name="days" type="Integer" array="False"/>
+            <parameter name="hours" type="Integer" array="False"/>
+            <parameter name="seconds" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Number of months: &quot;&amp; months" newline="True"/>
+            <output expression="&quot;Number of days: &quot; &amp; days" newline="True"/>
+            <output expression="&quot;Number of hours: &quot; &amp; hours" newline="True"/>
+            <output expression="&quot;Number of seconds: &quot;&amp; seconds" newline="True"/>
+        </body>
+    </function>
+    <function name="GetAge" type="Integer" variable="age">
+        <parameters/>
+        <body>
+            <declare name="age" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your age: &quot;" newline="True"/>
+            <input variable="age"/>
+        </body>
+    </function>
+</flowgorithm>

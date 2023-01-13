@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-06-09 11:42:42 AM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMDc7MTE6MTI6MTUgQU07MjgyOQ=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMDk7MTE6NDI6NDIgQU07MzsyOTQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Separate functions for input, each type of processing, and output."/>
+            <declare name="Rate" type="Real" array="False" size=""/>
+            <declare name="Week" type="Real" array="False" size=""/>
+            <assign variable="Rate" expression="GetRate()"/>
+            <output expression="&quot;Enter the numbers of hours worked this week:&quot;" newline="True"/>
+            <input variable="Week"/>
+            <if expression="Week &gt; 40">
+                <then>
+                    <declare name="Overtime" type="Real" array="False" size=""/>
+                    <assign variable="Overtime" expression="GetOvertimeHours(Week)"/>
+                    <declare name="OvertimeRate" type="Real" array="False" size=""/>
+                    <assign variable="OvertimeRate" expression="1.5 * Rate"/>
+                    <call expression="Calculate(Rate, Overtime)"/>
+                </then>
+                <else>
+                    <output expression="&quot;This program has ended&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Calculate" type="None" variable="Result">
+        <parameters>
+            <parameter name="Rate" type="Real" array="False"/>
+            <parameter name="Overtime" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="Overtime + 40 &amp; &quot; hours worked at $&quot; &amp; Rate &amp; &quot; per hour with overtime is $&quot; &amp; (40 * Rate) + (1.5 * Rate * Overtime)" newline="True"/>
+        </body>
+    </function>
+    <function name="GetOvertimeHours" type="Real" variable="Overtime">
+        <parameters>
+            <parameter name="Week" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Overtime" type="Real" array="False" size=""/>
+            <assign variable="Overtime" expression="Week - 40"/>
+        </body>
+    </function>
+    <function name="GetRate" type="Real" variable="Rate">
+        <parameters/>
+        <body>
+            <declare name="Rate" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter rate per hour in dollars:&quot;" newline="True"/>
+            <input variable="Rate"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-30 12:19:58 PM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMzA7MTE6MDI6MTIgQU07MjgyMA=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMzA7MTI6MTk6NTggUE07NDsyOTY1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Seperate functions for output, processing, and input"/>
+            <declare name="hours, rate, weekly, monthly, annually" type="Integer" array="False" size=""/>
+            <assign variable="hours" expression="GetHours()"/>
+            <assign variable="rate" expression="GetRate()"/>
+            <assign variable="weekly" expression="CalculateWeekly (hours, rate)"/>
+            <assign variable="monthly" expression="CalculateMonthly (weekly)"/>
+            <assign variable="annually" expression="CalculateAnnually (weekly)"/>
+            <call expression="DisplayResult(weekly, monthly, annually)"/>
+        </body>
+    </function>
+    <function name="CalculateAnnually" type="Integer" variable="annually">
+        <parameters>
+            <parameter name="weekly" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="annually" type="Integer" array="False" size=""/>
+            <assign variable="annually" expression="52*weekly"/>
+        </body>
+    </function>
+    <function name="CalculateMonthly" type="Integer" variable="monthly">
+        <parameters>
+            <parameter name="weekly" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="monthly" type="Integer" array="False" size=""/>
+            <assign variable="monthly" expression="4*weekly"/>
+        </body>
+    </function>
+    <function name="CalculateWeekly" type="Integer" variable="weekly">
+        <parameters>
+            <parameter name="hours" type="Integer" array="False"/>
+            <parameter name="rate" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="weekly" type="Integer" array="False" size=""/>
+            <assign variable="weekly" expression="hours*rate"/>
+        </body>
+    </function>
+    <function name="DisplayResult" type="None" variable="">
+        <parameters>
+            <parameter name="weekly" type="Integer" array="False"/>
+            <parameter name="monthly" type="Integer" array="False"/>
+            <parameter name="annually" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;weekly: &quot; &amp; weekly" newline="True"/>
+            <output expression="&quot;monthly: &quot; &amp; monthly" newline="True"/>
+            <output expression="&quot;annually: &quot; &amp; annually" newline="True"/>
+        </body>
+    </function>
+    <function name="GetHours" type="Integer" variable="hours">
+        <parameters/>
+        <body>
+            <declare name="hours" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of hours&quot;" newline="True"/>
+            <input variable="hours"/>
+        </body>
+    </function>
+    <function name="GetRate" type="Integer" variable="rate">
+        <parameters/>
+        <body>
+            <declare name="rate" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter rate per hour&quot;" newline="True"/>
+            <input variable="rate"/>
+        </body>
+    </function>
+</flowgorithm>

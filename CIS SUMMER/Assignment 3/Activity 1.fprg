@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-26 12:15:03 PM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMjU7MTE6MjI6MzEgUE07Mjg0Mg=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDUtMjY7MTI6MTU6MDMgUE07NzsyOTU5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program displays weekly, monthly, and annual gross pay."/>
+            <declare name="hours, rate, weekly, monthly, annually" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter number of hours worked:&quot;" newline="True"/>
+            <input variable="hours"/>
+            <output expression="&quot;Enter rate per hour:&quot;" newline="True"/>
+            <input variable="rate"/>
+            <assign variable="weekly" expression="hours*rate"/>
+            <assign variable="monthly" expression="4*weekly"/>
+            <assign variable="annually" expression="52*weekly"/>
+            <output expression="&quot;weekly: &quot; &amp; weekly" newline="True"/>
+            <output expression="&quot;monthly: &quot; &amp; monthly" newline="True"/>
+            <output expression="&quot;Annual gross pay: &quot; &amp; annually" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

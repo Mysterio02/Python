@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Meraj"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-06-13 12:07:02 PM"/>
+        <attribute name="created" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMDk7MDY6NTc6MTUgUE07Mjg1OQ=="/>
+        <attribute name="edited" value="TWVyYWo7REVTS1RPUC02RUVVU1YwOzIwMjAtMDYtMTM7MTI6MDc6MDIgUE07NTsyOTU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program generates a list of multiplication expressions for a given value.&#13;&#10;"/>
+            <declare name="number, value, i" type="Integer" array="False" size=""/>
+            <assign variable="number" expression="GetNumber()"/>
+            <assign variable="value" expression="GetValue()"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i &lt;= Value">
+                <output expression="Number &amp; &quot; * &quot; &amp; i &amp; &quot; = &quot; &amp; Number * i" newline="True"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+        </body>
+    </function>
+    <function name="GetNumber" type="Integer" variable="number">
+        <parameters/>
+        <body>
+            <declare name="number" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number to generate multiplication expressions for:&quot;" newline="True"/>
+            <input variable="number"/>
+        </body>
+    </function>
+    <function name="GetValue" type="Integer" variable="value">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of value to be displayed:&quot;" newline="True"/>
+            <input variable="value"/>
+        </body>
+    </function>
+</flowgorithm>
